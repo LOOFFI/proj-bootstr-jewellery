@@ -1,26 +1,49 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Switch,Route} from 'react-router-dom'
+import HomePage from './components/HomePage';
+import OurPhilosophy from './components/OurPhilosophy';
+import NavBar from './components/NavBar';
+import NotFound from './components/NotFound';
+import DiamondsCollection from './components/DiamondsCollection';
+import EmeraldsCollection from './components/EmeraldsCollection';
+import RubiesCollection from './components/RubiesCollection';
+import SapphiresCollection from './components/SapphiresCollection';
+import ContactForm from './components/ContactForm';
+
 
 class App extends Component {
+
+
+
+
   render() {
+
+
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+    <main>
+      <header>
+          <NavBar/> 
+      </header>
+          
+      
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/en/philosophy" component={ OurPhilosophy }/>
+              <Route path="/en/diamonds" component={ DiamondsCollection } />
+              <Route path="/en/rubies" component={ RubiesCollection } />
+              <Route path="/en/emeralds" component={ EmeraldsCollection } />
+              <Route path="/en/sapphires" component={ SapphiresCollection } />
+              <Route path="/contact" component={ ContactForm }/>
+              <Route path="/notfound" component={ NotFound }/>
+            </Switch>
+      
+
+
+      {/* <footer>
+          Made whith releaf...
+      </footer> */}
+    </main>
     );
   }
 }
