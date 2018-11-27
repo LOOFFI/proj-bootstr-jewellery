@@ -8,7 +8,7 @@ class EmeraldsCollection extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      alreadyOpen: true
+      emeraldsAlreadyOpen: true
      }
   }
   render() { 
@@ -19,7 +19,7 @@ class EmeraldsCollection extends React.Component {
         
         <Row>
           <Col id="home-page-header" md="4">
-            <NavBarVerticOp alreadyOpen path="/en/emeralds" />
+            <NavBarVerticOp emeraldsAlreadyOpen path="/en/emeralds" />
           </Col>
           <Col md="8">
             <CollectionEm/>

@@ -8,7 +8,7 @@ class DiamondsCollection extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      alreadyOpen: true,
+      diamondsAlreadyOpen: true,
       path: "/en/diamonds",
     }
   }
@@ -27,7 +27,7 @@ class DiamondsCollection extends React.Component {
         
         <Row>
           <Col id="home-page-header" md="4">
-            <NavBarVerticOp alreadyOpen path="/en/diamonds"/>
+            <NavBarVerticOp diamondsAlreadyOpen path="/en/diamonds"/>
           </Col>
           <Col md="8">
             <CollectionDts/>

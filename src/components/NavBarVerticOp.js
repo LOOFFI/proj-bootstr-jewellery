@@ -71,16 +71,16 @@ export default class NavBarVerticOp extends React.Component {
           <DropdownToggle nav className="text-muted-strong">
           <div className="hover-effect">Our Collection</div>
             <DropdownMenu right className="no-border">
-              <DropdownItem className="hover-effect-sub" onClick={(event)=> this.toPath("/en/diamonds") }>
+              <DropdownItem className="hover-effect-sub" disabled={this.props.diamondsAlreadyOpen} onClick={(event)=> this.toPath("/en/diamonds") }>
                 Diamonds
               </DropdownItem>
-              <DropdownItem className="hover-effect-sub" onClick={(event)=> this.toPath("/en/emeralds") }>
+              <DropdownItem className="hover-effect-sub" disabled={this.props.emeraldsAlreadyOpen} onClick={(event)=> this.toPath("/en/emeralds") }>
                 Emeralds
               </DropdownItem>
-              <DropdownItem className="hover-effect-sub" onClick={(event)=> this.toPath("/en/rubies") }>
+              <DropdownItem className="hover-effect-sub" disabled={this.props.rubiesAlreadyOpen} onClick={(event)=> this.toPath("/en/rubies") }>
                 Rubies
               </DropdownItem>
-              <DropdownItem className="hover-effect-sub" onClick={(event)=> this.toPath("/en/sapphires") }>
+              <DropdownItem className="hover-effect-sub" disabled={this.props.sapphiresAlreadyOpen} onClick={(event)=> this.toPath("/en/sapphires") }>
                 Sapphires
               </DropdownItem>
             </DropdownMenu>

@@ -8,7 +8,7 @@ class SapphiresCollection extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      alreadyOpen: true
+      sapphiresAlreadyOpen: true
      }
   }
   render() { 
@@ -19,7 +19,7 @@ class SapphiresCollection extends React.Component {
         
         <Row>
           <Col id="home-page-header" md="4">
-            <NavBarVerticOp alreadyOpen path="/en/sapphires"/>
+            <NavBarVerticOp sapphiresAlreadyOpen path="/en/sapphires"/>
           </Col>
           <Col md="8">
             <CollectionSap/>
