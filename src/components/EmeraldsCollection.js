@@ -19,7 +19,7 @@ class EmeraldsCollection extends React.Component {
         
         <Row>
           <Col id="home-page-header" md="4">
-            <NavBarVerticOp alreadyOpen/>
+            <NavBarVerticOp alreadyOpen path="/en/emeralds" />
           </Col>
           <Col md="8">
             <CollectionEm/>

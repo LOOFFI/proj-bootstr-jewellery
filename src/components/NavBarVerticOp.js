@@ -1,10 +1,8 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
 import {
-  Navbar,
   Nav,
   NavLink,
-  NavItem,
   DropdownToggle,
   UncontrolledDropdown,
   DropdownMenu,
@@ -15,51 +13,43 @@ export default class NavBarVerticOp extends React.Component {
 
   constructor(props) {
     super(props);
-    
-    this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false,
-      toPath: "",
+      toPath: "/",
     };
-  }
-
-  
- 
-
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
   }
 
   toPath(event) {
     this.setState({
       toPath: event,
-      isOpen:true
-  })
+    })
   }
   
   render() {
 
     const {toPath,isOpen}=this.state;
     
-    console.log(this.props)
+    // to verify the props
+    // console.log(toPath,isOpen)
+    // console.log(this.props)
 
-    if (toPath==="/en/diamonds") {
-      return <Redirect to="/en/diamonds" />;
+    if (toPath==="/en/diamonds"&&isOpen===false&&this.props.path!=="/en/diamonds") {
+      return <Redirect to="/en/diamonds" />
     }
 
-    if (toPath==="/en/emeralds") {
+    if (toPath==="/en/emeralds"&&isOpen===false&&this.props.path!=="/en/emeralds") {
       return <Redirect to="/en/emeralds" />
     }
 
-    if (toPath==="/en/rubies") {
+    if (toPath==="/en/rubies"&&isOpen===false&&this.props.path!=="/en/rubies") {
       return <Redirect to="/en/rubies" />
     }
 
-    if (toPath==="/en/sapphires") {
+    if (toPath==="/en/sapphires"&&isOpen===false&&this.props.path!=="/en/sapphires") {
       return <Redirect to="/en/sapphires" />
     }
+    
+   
 
     return (
       <div id="home-page-header" className="ml-5">

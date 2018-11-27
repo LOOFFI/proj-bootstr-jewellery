@@ -19,7 +19,7 @@ class SapphiresCollection extends React.Component {
         
         <Row>
           <Col id="home-page-header" md="4">
-            <NavBarVerticOp alreadyOpen/>
+            <NavBarVerticOp alreadyOpen path="/en/sapphires"/>
           </Col>
           <Col md="8">
             <CollectionSap/>

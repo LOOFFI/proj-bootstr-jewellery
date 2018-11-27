@@ -8,14 +8,15 @@ class DiamondsCollection extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      alreadyOpen: true
+      alreadyOpen: true,
+      path: "/en/diamonds",
     }
   }
   render() { 
 
-    console.log(this.props.match.path)
+    console.log(this.props.match)
 
-    if (this.props.match.path==='/en/diamonds') {
+   
     
     
 
@@ -26,7 +27,7 @@ class DiamondsCollection extends React.Component {
         
         <Row>
           <Col id="home-page-header" md="4">
-            <NavBarVerticOp alreadyOpen/>
+            <NavBarVerticOp alreadyOpen path="/en/diamonds"/>
           </Col>
           <Col md="8">
             <CollectionDts/>
@@ -36,7 +37,7 @@ class DiamondsCollection extends React.Component {
       </main>
      );
     }
-  }
+  
 }
  
 export default DiamondsCollection;

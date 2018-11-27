@@ -67,12 +67,10 @@ export default class NavBarVertic extends React.Component {
 
         
         <NavLink href="/" className="text-muted-strong">
-          
           <div className="hover-effect">Home</div>
         </NavLink>
         
         <NavLink href="/en/philosophy" className="text-muted-strong">
-          
           <div className="hover-effect">Our Philosophy</div>
         </NavLink>
 

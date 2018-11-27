@@ -19,7 +19,7 @@ class RubiesCollection extends React.Component {
       
       <Row>
         <Col id="home-page-header" md="4">
-          <NavBarVerticOp alreadyOpen/>
+          <NavBarVerticOp alreadyOpen path="/en/rubies"/>
         </Col>
         <Col md="8">
           <CollectionRb/>
