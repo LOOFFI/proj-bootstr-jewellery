@@ -111,6 +111,10 @@ export default class NavBarVerticOp extends React.Component {
         <NavLink href="/contact" className="text-dark">
           <div className="hover-effect"><i className="fas fa-envelope"></i></div>
         </NavLink>
+
+        <NavLink href="localhost:5000" target="_blank" className="text-dark">
+          admin
+        </NavLink>
         
       </Nav>
       </div>

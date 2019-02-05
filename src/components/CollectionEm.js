@@ -9,92 +9,54 @@ import {
   CardText,
   CardImg
 } from 'reactstrap';
+import axios from 'axios';
 
 
 class CollectionEm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {  }
+    this.state = { 
+      jewelCardArray: []
+     }
   }
+
+  componentDidMount() {
+    axios.get('http://localhost:4000/api/jewel')
+      .then(response => {
+        console.log('list of jewels', response.data)
+        this.setState({jewelCardArray: response.data})
+      })
+      .catch(err => {
+        console.log(err);
+        alert("something wrong in the jewels request")
+      })
+  }
+
   render() { 
 
-    
+    const {jewelCardArray} = this.state;
 
     return ( 
       <Container fluid>
         
         
-        <Row>
+        <Row>{jewelCardArray.map(oneJewel =>
           
           <Col md="6">
           <Card className="m-3 shadow mb-5 bg-white rounded">
-            <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+            <CardImg top width="100%" src={oneJewel.img} alt="Card image cap" />
               <CardBody>
-                <CardTitle>Emeralds</CardTitle>
-                <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+                <CardTitle>{oneJewel.title}</CardTitle>
+                <CardText>{oneJewel.description}</CardText>
+                <CardText>{oneJewel.price}</CardText>
                 <CardText>
-                <small>small writting</small>
-                </CardText>
-              </CardBody>
-          </Card>
-          <Card className="m-3 shadow mb-5 bg-white rounded">
-            <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card Title</CardTitle>
-                <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                <CardText>
-                <small>small writting</small>
-                </CardText>
-              </CardBody>
-          </Card>
-          <Card className="m-3 shadow mb-5 bg-white rounded">
-            <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card Title</CardTitle>
-                <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                <CardText>
-                <small>small writting</small>
+                <small>{oneJewel.ref}</small>
                 </CardText>
               </CardBody>
           </Card>
 
           </Col>
-
-          <Col md="6">  
-          <Card className="m-3 shadow mb-5 bg-white rounded">
-            <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card Title</CardTitle>
-                <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                <CardText>
-                <small>small writting</small>
-                </CardText>
-              </CardBody>
-          </Card>
-          <Card className="m-3 shadow mb-5 bg-white rounded">
-            <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card Title</CardTitle>
-                <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                <CardText>
-                <small>small writting</small>
-                </CardText>
-              </CardBody>
-          </Card>
-          <Card className="m-3 shadow mb-5 bg-white rounded">
-            <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-              <CardBody>
-                <CardTitle>Card Title</CardTitle>
-                <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                <CardText>
-                <small>small writting</small>
-                </CardText>
-              </CardBody>
-          </Card>
-
-
-          </Col>
-
+        )}
         </Row>
       </Container> 
 

@@ -70,6 +70,7 @@ class Carousel3 extends Component {
 
   render() {
     const { activeIndex } = this.state;
+    console.log(this.state)
 
     const slides = items.map((item) => {
       return (

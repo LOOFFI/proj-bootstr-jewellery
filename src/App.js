@@ -9,17 +9,26 @@ import EmeraldsCollection from './components/EmeraldsCollection';
 import RubiesCollection from './components/RubiesCollection';
 import SapphiresCollection from './components/SapphiresCollection';
 import ContactForm from './components/ContactForm';
+import Footer from './components/Footer';
+import Authentication from './components/AuthenticationForm';
+
 
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      currentUser: null
+    };
+  }
 
 
   render() {
 
-
-
+    const { currentUser } = this.state;
+    
     return (
     <main>
       <header>
@@ -35,14 +44,16 @@ class App extends Component {
               <Route path="/en/emeralds" component={ EmeraldsCollection } />
               <Route path="/en/sapphires" component={ SapphiresCollection } />
               <Route path="/contact" component={ ContactForm }/>
+              {/* <Route path="/authentication" component={ Authentication } /> */}
+              <Route exact path="/authentication" render={() => (<Authentication currentUser={currentUser} onLogin={userDoc => this.setState({ currentUser: userDoc })} />
+            )}
+          />
               <Route path="/notfound" component={ NotFound }/>
             </Switch>
       
 
-
-      {/* <footer>
-          Made whith releaf...
-      </footer> */}
+      <Footer/>
+      
     </main>
     );
   }

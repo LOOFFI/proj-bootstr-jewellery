@@ -8,7 +8,8 @@ import {
   NavItem,
   NavLink,
   } from 'reactstrap';
-  
+
+
 
 export default class NavBar extends React.Component {
   constructor(props) {
@@ -26,24 +27,29 @@ export default class NavBar extends React.Component {
   }
   
   render() {
+    
+    
+
     return (
+
       <div className="ml-5 mr-5">
         <Navbar color="light" light expand="md" className="border-bottom border-gray bg-white" style={{ height: 80 }}>
 
-          <NavbarBrand href="/">V.J.</NavbarBrand>
+          <NavbarBrand href="/">E.J.</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml" navbar>
               <NavItem>
-                <NavLink href="/">Vendome Jewellery</NavLink>
+                <NavLink href="/">Ethic Jewellery</NavLink>
               </NavItem>
-              
             </Nav>
+
             <Nav className="ml-auto" navbar>
               <NavLink href="/" >
                 {/* free icon from font awesome */}
                 <i className="fas fa-search"></i>
               </NavLink>
+              
             </Nav>
           </Collapse>
         </Navbar>
