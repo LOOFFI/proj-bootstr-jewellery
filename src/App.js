@@ -45,9 +45,9 @@ class App extends Component {
               <Route path="/en/sapphires" component={ SapphiresCollection } />
               <Route path="/contact" component={ ContactForm }/>
               {/* <Route path="/authentication" component={ Authentication } /> */}
-              <Route exact path="/authentication" render={() => (<Authentication currentUser={currentUser} onLogin={userDoc => this.setState({ currentUser: userDoc })} />
-            )}
+              <Route exact path="/authentication" render={() => (<Authentication currentUser={currentUser} onLogin={userDoc => this.setState({ currentUser: userDoc })} />)}
           />
+              <Route path='/admin' component={() => { window.location = 'http://localhost:5000'; return null;} }/>      
               <Route path="/notfound" component={ NotFound }/>
             </Switch>
       

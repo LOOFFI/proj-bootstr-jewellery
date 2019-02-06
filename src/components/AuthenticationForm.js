@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form,Button,Input} from 'reactstrap';
+import {Form, FormGroup,Button,Input,Container,Row,Col} from 'reactstrap';
 import { Redirect } from "react-router-dom";
 import api from "../api";
 
@@ -79,10 +79,7 @@ class Authentication extends React.Component {
 
     if (currentUser) {
       if (currentUser.isAdmin) {
-
-        // ################### A CHANGER ###############################
-
-        return <Redirect to="localhost:5000" target="_blank"/>
+        return <Redirect to="/admin"/>
       }
 
       else return <Redirect to="/" />;
@@ -91,45 +88,50 @@ class Authentication extends React.Component {
     
 
     return (
-      <section>
-        <h2>LOG IN</h2>
-
-        <Form onSubmit={event => this.handleSubmit(event)}>
-          <div >
-            <div >
-              <label>
-                username
-              </label>
-              <Input
-                value={userName}
-                type="string"
-               
-                onChange={event => this.updateUsername(event)}
-                onFocus={() => this.activateUsername()}
-                onBlur={event => this.disableUsername(event)}
-              />
-            </div>
-
-            <div >
-              <label
+      <Container id="login-position">
+        <Row>
+          <Col sm="12" md={{ size: 6, offset: 3 }}>
+              <section>
+                <h2>LOG IN</h2>
                 
-              >
-                Password
-              </label>
-              <Input
-                value={password}
-                type="password"
-                
-                onChange={event => this.updatepassword(event)}
-                onFocus={() => this.activatePassword()}
-                onBlur={event => this.disablePassword(event)}
-              />
-            </div>
-          </div>
 
-          <Button>Log in</Button>
-        </Form>
-      </section>
+                 <Form onSubmit={event => this.handleSubmit(event)}>
+                    <div >
+                      <FormGroup >
+                        <label>
+                          USERNAME
+                        </label>
+                        <Input
+                          value={userName}
+                          type="string"
+                        
+                          onChange={event => this.updateUsername(event)}
+                          onFocus={() => this.activateUsername()}
+                          onBlur={event => this.disableUsername(event)}
+                        />
+                      </FormGroup>
+
+                      <FormGroup >
+                        <label>
+                          PASSWORD
+                        </label>
+                        <Input
+                          value={password}
+                          type="password"
+                          
+                          onChange={event => this.updatepassword(event)}
+                          onFocus={() => this.activatePassword()}
+                          onBlur={event => this.disablePassword(event)}
+                        />
+                      </FormGroup>
+                    </div>
+
+                    <Button>Log in</Button>
+                  </Form>
+              </section>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

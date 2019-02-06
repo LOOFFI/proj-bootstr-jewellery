@@ -122,9 +122,7 @@ export default class NavBarVertic extends React.Component {
           <div className="hover-effect"><i className="fas fa-envelope"></i></div>
         </NavLink>
 
-        <NavLink href="/authentication" className="text-dark">
-          sign in
-        </NavLink>
+        
         
       </Nav>
       </div>

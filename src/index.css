@@ -29,6 +29,12 @@ code {
   padding: 20px 85px;
 }
 
+#login-position, #contact-position {
+  padding: 10rem;
+}
+
+
+
 #home-page-header {
   margin-top: 10vh;
   
