@@ -1,22 +1,28 @@
 import React from "react";
 import Moment from 'react-moment';
 import {NavLink,Nav} from 'reactstrap'
+import Clock from '../components/Clock.js'
 
 function Footer() {
 
   const now = new Date();
 
+  console.log(now);
+
   return (
     <section className="footer">
         <div>Welcome.inc</div>
         <Nav>
+          
           <NavLink href="/authentication" className="text-white">
             sign in
           </NavLink>
+                    
         </Nav>
-        <Moment interval={60000} format="DD-MM-YYYY HH:mm:ss">
-          {now}
-        </Moment>
+      
+        <Nav>  
+          <Clock/>
+        </Nav>
       
     </section>
   );
