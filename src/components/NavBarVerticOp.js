@@ -92,7 +92,7 @@ export default class NavBarVerticOp extends React.Component {
           
           <div className="hover-effect">Wedding</div>
         </NavLink>
-        <NavLink href="/" className="text-muted-strong">
+        <NavLink href="/map" className="text-muted-strong">
           
           <div className="hover-effect">Our Showroom</div>
         </NavLink>

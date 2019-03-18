@@ -10,6 +10,44 @@
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+    <script type="text/javascript">
+			// On initialise la latitude et la longitude de Paris (centre de la carte)
+			var lat = 48.8776065;
+			var lon = 2.2986797;
+      var macarte = null;
+      var myIcon = L.icon({
+            iconUrl: 'favicon.ico',
+            iconSize: [38, 40],
+            iconAnchor: [22, 40],
+            popupAnchor: [-3, -76],
+            // shadowUrl: 'my-icon-shadow.png',
+            // shadowSize: [68, 95],
+            // shadowAnchor: [22, 94]
+          });
+      
+			// Fonction d'initialisation de la carte
+			function initMap() {
+				// Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
+                macarte = L.map('map').setView([lat, lon], 13);
+                // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
+                L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                    // Il est toujours bien de laisser le lien vers la source des données
+                    attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+                    minZoom: 1,
+                    maxZoom: 20
+                }).addTo(macarte);
+                marker = L.marker([lat, lon], {icon: myIcon}).addTo(macarte);
+            }
+
+            
+			window.onload = function(){
+				// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+				initMap(); 
+			};
+    </script>
+   
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -20,6 +58,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Ethic Jewellery</title>
+
   </head>
   <body>
     <noscript>

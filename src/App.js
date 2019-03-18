@@ -11,6 +11,7 @@ import SapphiresCollection from './components/SapphiresCollection';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import Authentication from './components/AuthenticationForm';
+import Position from './components/Position'
 
 
 
@@ -47,6 +48,7 @@ class App extends Component {
               {/* <Route path="/authentication" component={ Authentication } /> */}
               <Route exact path="/authentication" render={() => (<Authentication currentUser={currentUser} onLogin={userDoc => this.setState({ currentUser: userDoc })} />)}
           />
+              <Route path="/map" component={ Position } />
               <Route path='/admin' component={() => { window.location = 'http://localhost:5000'; return null;} }/>      
               <Route path="/notfound" component={ NotFound }/>
             </Switch>

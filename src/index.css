@@ -40,6 +40,10 @@ code {
   
 }
 
+#map {
+  height: 300px;
+  margin : 50px 100px;
+}
 
 .hover-effect {
   width:0%;
@@ -76,5 +80,6 @@ code {
 .text-muted-strong:hover {
   color: black;
  }
+
 
  
