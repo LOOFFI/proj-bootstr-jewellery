@@ -21,7 +21,7 @@ class Position extends React.Component {
 
           <Col md="8">
               <div className="map" id="map">map position</div>
-              <div>Come to meet us in our showroom, 235 Faubourg Saint Honoré Street...</div>
+              <div className="map">Come to meet us in our showroom, 235 Faubourg Saint Honoré Street...</div>
           </Col>
         </Row>
 
