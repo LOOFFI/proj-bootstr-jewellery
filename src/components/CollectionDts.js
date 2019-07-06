@@ -52,6 +52,16 @@ class CollectionDts extends React.Component {
                 <CardText>
                 <small>{oneJewel.ref}</small>
                 </CardText>
+                <button
+                   className="snipcart-add-item"
+                   data-item-id={oneJewel._id}
+                   data-item-name={oneJewel.title}
+                   data-item-price={oneJewel.price}
+                   data-item-url="http://localhost:3000"
+                   data-item-description={oneJewel.description}
+                   data-item-image={oneJewel.img}>
+                   BUY
+                </button>
               </CardBody>
           </Card>
 

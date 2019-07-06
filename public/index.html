@@ -19,48 +19,51 @@
 			var lon = 2.2986797;
       var macarte = null;
       var myIcon = L.icon({
-            iconUrl: 'favicon.ico',
-            iconSize: [38, 40],
-            iconAnchor: [22, 40],
-            popupAnchor: [-3, -76],
-            // shadowUrl: 'my-icon-shadow.png',
-            // shadowSize: [68, 95],
-            // shadowAnchor: [22, 94]
-          });
+        iconUrl: 'favicon.ico',
+        iconSize: [38, 40],
+        iconAnchor: [22, 40],
+        popupAnchor: [-3, -76],
+        // shadowUrl: 'my-icon-shadow.png',
+        // shadowSize: [68, 95],
+        // shadowAnchor: [22, 94]
+      });
       
 			// Fonction d'initialisation de la carte
 			function initMap() {
-				// Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
-                macarte = L.map('map').setView([lat, lon], 13);
-                // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
-                L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-                    // Il est toujours bien de laisser le lien vers la source des données
-                    attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
-                    minZoom: 1,
-                    maxZoom: 20
-                }).addTo(macarte);
-                marker = L.marker([lat, lon], {icon: myIcon}).addTo(macarte);
-            }
-
-            
+        // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
+        macarte = L.map('map').setView([lat, lon], 13);
+        // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
+        L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+          // Il est toujours bien de laisser le lien vers la source des données
+          attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+          minZoom: 1,
+          maxZoom: 20
+        }).addTo(macarte);
+        marker = L.marker([lat, lon], {icon: myIcon}).addTo(macarte);
+      }
+      
+      
 			window.onload = function(){
-				// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+        // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
 				initMap(); 
 			};
-    </script>
+      </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-   
+    
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
-
+      
       Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Ethic Jewellery</title>
-
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="NWRkZTRhMmYtMGEyMy00MDAzLWE1Y2MtZGJmZTg0MjE1ZTM4NjM2OTgwMDQxNDMxMDY5NDQx"></script>
+    <link href="http://localhost:3006/themes/base/snipcart.css" rel="stylesheet" />
   </head>
   <body>
     <noscript>
