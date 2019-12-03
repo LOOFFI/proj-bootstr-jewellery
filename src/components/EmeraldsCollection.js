@@ -1,5 +1,5 @@
 import React from 'react';
-import CollectionEm from './CollectionEm';
+import CollectionJewels from './CollectionJewels.js';
 import {Container,Row,Col} from 'reactstrap';
 import NavBarVerticOp from '../components/NavBarVerticOp';
 
@@ -8,7 +8,8 @@ class EmeraldsCollection extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      emeraldsAlreadyOpen: true
+      emeraldsAlreadyOpen: true,
+      gemstone: "emeralds"
      }
   }
   render() { 
@@ -22,7 +23,7 @@ class EmeraldsCollection extends React.Component {
             <NavBarVerticOp emeraldsAlreadyOpen path="/en/emeralds" />
           </Col>
           <Col md="8">
-            <CollectionEm/>
+            <CollectionJewels gemstone={this.state.gemstone}/>
           </Col>
         </Row>
       </Container>

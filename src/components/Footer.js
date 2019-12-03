@@ -7,7 +7,7 @@ function Footer() {
 
   const now = new Date();
 
-  console.log(now);
+  
 
   return (
     <section className="footer">

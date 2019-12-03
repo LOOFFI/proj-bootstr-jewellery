@@ -1,5 +1,5 @@
 import React from 'react';
-import CollectionDts from './CollectionDts';
+import CollectionJewels from './CollectionJewels';
 import {Container,Row,Col} from 'reactstrap';
 import NavBarVerticOp from '../components/NavBarVerticOp';
 
@@ -9,16 +9,13 @@ class DiamondsCollection extends React.Component {
     super(props);
     this.state = { 
       diamondsAlreadyOpen: true,
+      gemstone: "diamonds",
       path: "/en/diamonds",
     }
   }
   render() { 
 
-    console.log(this.props.match)
-
-   
-    
-    
+       
 
     return ( 
       <main>
@@ -30,7 +27,7 @@ class DiamondsCollection extends React.Component {
             <NavBarVerticOp diamondsAlreadyOpen path="/en/diamonds"/>
           </Col>
           <Col md="8">
-            <CollectionDts/>
+            <CollectionJewels gemstone={this.state.gemstone} />
           </Col>
         </Row>
       </Container>

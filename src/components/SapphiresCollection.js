@@ -1,5 +1,5 @@
 import React from 'react';
-import CollectionSap from './CollectionSap';
+import CollectionJewels from './CollectionJewels';
 import {Container,Row,Col} from 'reactstrap';
 import NavBarVerticOp from '../components/NavBarVerticOp';
 
@@ -8,9 +8,11 @@ class SapphiresCollection extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      sapphiresAlreadyOpen: true
+      sapphiresAlreadyOpen: true,
+      gemstone: "sapphires"
      }
   }
+  
   render() { 
     return ( 
       <main>
@@ -22,7 +24,7 @@ class SapphiresCollection extends React.Component {
             <NavBarVerticOp sapphiresAlreadyOpen path="/en/sapphires"/>
           </Col>
           <Col md="8">
-            <CollectionSap/>
+            <CollectionJewels gemstone={this.state.gemstone} />
           </Col>
         </Row>
       </Container>

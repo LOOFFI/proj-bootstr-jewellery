@@ -1,10 +1,8 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
 import {
-  Navbar,
   Nav,
   NavLink,
-  NavItem,
   DropdownToggle,
   UncontrolledDropdown,
   DropdownMenu,
@@ -15,7 +13,6 @@ export default class NavBarVertic extends React.Component {
 
   constructor(props) {
     super(props);
-    
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false,
